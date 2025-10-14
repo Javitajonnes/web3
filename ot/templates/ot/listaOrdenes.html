@@ -1,0 +1,13 @@
+{% extends 'ot/base.html' %}
+{% block content %}
+<h2>Listado de Ordenes</h2>
+{% for n in makeorder %}
+><hr>
+<p>{{n.header}}</p>
+<p>{{n.detail}}</p>
+<p>{{n.publisher|date:"SHORT_DATE_FORMAT"}}</p>
+<p>{{n.categories.all|join:", "}}</p>
+
+{% endfor%}
+{% endblock %}
+
