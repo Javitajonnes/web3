@@ -27,6 +27,7 @@ class MakeOrder(models.Model):
                             verbose_name="Imagen")
     author=models.ForeignKey(User,on_delete=models.CASCADE,
                              verbose_name="Autor")
+    categories=models.ManyToManyField(Category, verbose_name="Categorias")
     created=models.DateTimeField(auto_now_add=True,
                                  verbose_name="F.creacion")
     updated=models.DateTimeField(auto_now=True,
